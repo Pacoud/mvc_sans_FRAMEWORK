@@ -4,7 +4,12 @@ class Task {
     private $db;
 
     public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;dbname=mvc_example', 'root', '');
+        # Configuration de la base de données
+        $host= '127.0.0.1';
+        $dbname= 'db_gwenole';
+        $user = 'root';
+        $password = 'mdp';
+        $this->db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
     }
 
     public function getAllTasks() {

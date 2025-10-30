@@ -1,6 +1,6 @@
 
 <?php
-require_once '../app/models/Task.php';
+require_once '../app/models/task.php';
 
 class TaskController {
     private $taskModel;
@@ -11,7 +11,7 @@ class TaskController {
 
     public function index() {
         $tasks = $this->taskModel->getAllTasks();
-        require '../app/views/taskList.php';
+        require '../app/views/tasklist.php';
     }
 
     public function addTask($taskName) {
