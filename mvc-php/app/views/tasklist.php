@@ -24,9 +24,17 @@
 </head>
 <body class="bg-primary min-h-screen text-primary-foreground">
     <div class="max-w-3xl mx-auto px-4 py-8">
-        <header class="mb-8">
-            <h1 class="text-3xl font-semibold">Liste des Tâches</h1>
-            <p class="text-sm text-primary-foreground/80 mt-1">Gestion simple des tâches — stylée avec Tailwind CSS</p>
+        <header class="flex justify-between items-center mb-8">
+            <div>
+                <h1 class="text-3xl font-semibold">Liste des Tâches</h1>
+                <p class="text-sm text-primary-foreground/80 mt-1">Connecté en tant que <?php echo htmlspecialchars($username); ?></p>
+            </div>
+            <div>
+                <?php if ($isAdmin): ?>
+                    <a href="/admin" class="text-sm px-4 py-2 rounded-md bg-white/10 hover:bg-white/20">Administration</a>
+                <?php endif; ?>
+                <a href="/logout" class="text-sm px-4 py-2 rounded-md bg-accent text-white hover:opacity-90 ml-2">Déconnexion</a>
+            </div>
         </header>
 
         <main>
@@ -60,4 +68,6 @@
         <footer class="mt-8 text-xs text-primary-foreground/60">Prototype — Tailwind via CDN. Voir README pour build local.</footer>
     </div>
 </body>
+</html>
+
 </html>
